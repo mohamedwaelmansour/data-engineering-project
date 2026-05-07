@@ -1,0 +1,39 @@
+import pandas as pd
+import time
+import os
+from datetime import datetime
+
+
+SOURCE_CSV = '/opt/airflow/data/bank_transactions.csv'
+STREAMING_LANDING_ZONE = "/opt/airflow/data/raw_transactions/"
+
+
+os.makedirs(STREAMING_LANDING_ZONE, exist_ok=True)
+
+def run_bank_simulator():
+    try:
+
+        df = pd.read_csv(SOURCE_CSV, nrows=1000) 
+        print(f" Data Loaded. Simulation started...")
+    except Exception as e:
+        print(f" Error: {e}")
+        return
+
+    batch_size = 5
+    for i in range(0, len(df), batch_size):
+        chunk = df.iloc[i:i+batch_size].copy()
+        
+       
+        chunk['processed_at'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        
+        file_id = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
+        file_path = os.path.join(STREAMING_LANDING_ZONE, f"bank_batch_{file_id}.json")
+        
+       
+        chunk.to_json(file_path, orient='records', lines=True)
+        
+        print(f" Sent batch {i//batch_size + 1} to {file_path}")
+        time.sleep(0.1)  
+
+if __name__ == "__main__":
+    run_bank_simulator()
