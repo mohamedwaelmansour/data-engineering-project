@@ -12,9 +12,9 @@ spark = SparkSession.builder \
 
  
 sf_options = {
-    "sfURL": "FQYKETH-PJ72382.snowflakecomputing.com", 
-    "sfUser": "MOHAMED",
-    "sfPassword": "N3gemdFUv9EfEGe", 
+    "sfURL": "xxxxxx", 
+    "sfUser": "xxxxx",
+    "sfPassword": "xxxxxxx", 
     "sfDatabase": "BANK_PROJECT_DB",
     "sfSchema": "PUBLIC",
     "sfWarehouse": "BANK_WH",
