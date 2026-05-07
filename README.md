@@ -2,6 +2,7 @@
 ---
 
 ## 🏗️ System Architecture
+![System Architecture](./workflow%20etl.png)
 This pipeline follows a modern **Lakehouse Architecture** divided into three distinct layers:
 
 1. **Data Generation:** A Python script (`simulator.py`) generates mock transactional data in **JSON** format.
@@ -13,6 +14,7 @@ This pipeline follows a modern **Lakehouse Architecture** divided into three dis
 ---
 
 ## 📊 Data Modeling (Star Schema)
+![Star Schema](./star%20schema.png)
 The data is structured to ensure high-performance analytical queries:
 
 * **Fact Table:** `FACT_TRANSACTIONS` – Contains transaction amounts, balances, and fraud flags.
