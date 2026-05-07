@@ -36,3 +36,23 @@ The data is structured to ensure high-performance analytical queries:
 ## ✅ Final Validation
 * **Execution Status:** All Airflow tasks completed successfully (Green DAG).
 * **Data Integrity:** 1,000 records successfully processed and verified in Snowflake via SQL query.
+* ---
+## 📸 Execution & Validation Screenshots
+
+Here is the visual evidence of the successful pipeline execution across all platforms:
+
+### 1. Airflow Orchestration (DAG Run)
+Successful execution of the entire DAG, moving data from simulator to cloud.
+![Airflow DAG Success](./image_14.png)
+
+### 2. Infrastructure & Job Monitoring (Hadoop/Yarn)
+Validation that the Spark jobs ran successfully on the distributed cluster.
+![Hadoop Finished Applications](./image_13.png)
+
+### 3. Data Storage (HDFS Directory Structure)
+Proof of data persistence in HDFS, showing both `raw_transactions` (Bronze) and `gold` layers.
+![HDFS Browsing Directory](./image_11.png)
+
+### 4. Final Data Load (Snowflake Verification)
+Final validation in Snowflake, showing the loaded `FACT_TRANSACTIONS` table with all 1,000 rows.
+![Snowflake Data Verification](./image_12.png)
