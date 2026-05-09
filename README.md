@@ -1,4 +1,4 @@
-# 🏦 End-to-End Bank Transactions ETL Pipeline
+# End-to-End Bank Transactions ETL Pipeline
 
 This project demonstrates a high-fidelity **Big Data ETL Pipeline** for processing bank transactions. It automates the data flow from a local simulator to a **Cloud Data Warehouse (Snowflake)** using a **Medallion Architecture** (Bronze/Gold layers).
 
