@@ -27,7 +27,6 @@ try:
 
     print("Uploading to Snowflake (Overwrite mode for Idempotency)...")
     
-    # الـ Overwrite هنا بيمسح الجدول في سنو فليك ويكتبه من جديد بالداتا الصح
     for table_name, df in [("FACT_TRANSACTIONS", df_fact), 
                             ("DIM_CUSTOMERS", df_customers), 
                             ("DIM_TIME", df_time)]:
