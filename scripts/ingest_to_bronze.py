@@ -42,12 +42,12 @@ try:
     record_count = df.count()
     
     if record_count > 0:
-        # إضافة تاريخ المعالجة للتقسيم (Partitioning) لضمان عدم التكرار
+         
         bronze_df = df.withColumn("ingestion_timestamp", current_timestamp()) \
                       .withColumn("source_file", input_file_name()) \
                       .withColumn("ingestion_date", to_date(current_timestamp()))
         
-        # استخدام overwrite مع التقسيم لضمان الثبات (Idempotency)
+        
         bronze_df.write.mode("overwrite").partitionBy("ingestion_date").parquet(HDFS_PATH)
         print(f"Success! Ingested {record_count} records into HDFS (Idempotent Mode).")
     else:
