@@ -4,7 +4,7 @@ This project demonstrates a high-fidelity **Big Data ETL Pipeline** for processi
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 ![System Architecture](media/workflow%20etl.png)
 
 This pipeline follows a modern **Lakehouse Architecture** divided into three distinct layers:
@@ -17,7 +17,7 @@ This pipeline follows a modern **Lakehouse Architecture** divided into three dis
 
 ---
 
-## 📊 Data Modeling (Star Schema)
+## Data Modeling (Star Schema)
 ![Star Schema](media/star%20schema.png)
 
 The data is structured to ensure high-performance analytical queries:
@@ -30,7 +30,7 @@ The data is structured to ensure high-performance analytical queries:
 
 ---
 
-## 🛠️ Tech Stack & Environment
+## Tech Stack & Environment
 * **Infrastructure:** Docker & Docker-Compose (WSL2 Ubuntu).
 * **Storage:** HDFS (Hadoop Distributed File System).
 * **Processing:** Apache Spark (PySpark running on YARN/Local).
@@ -39,13 +39,13 @@ The data is structured to ensure high-performance analytical queries:
 
 ---
 
-## ✅ Final Validation
+## Final Validation
 * **Execution Status:** All Airflow tasks completed successfully (Green DAG).
 * **Data Integrity:** High-volume records (up to 20,000) successfully processed and verified in Snowflake.
 
 ---
 
-## 📸 Execution & Validation Screenshots
+## Execution & Validation Screenshots
 
 ### 1. Airflow Orchestration (DAG Run)
 Successful execution of the entire DAG, moving data from simulator to cloud.
