@@ -13,7 +13,7 @@ spark = SparkSession.builder \
     .config("spark.hadoop.fs.defaultFS", "hdfs://hadoop-namenode:9000") \
     .getOrCreate()
 
-# تصحيح المسار ليقرأ من ملفات الباركيه في البرونز
+
 BRONZE_PATH = "hdfs://hadoop-namenode:9000/bank_project/bronze/transactions"
 GOLD_BASE_PATH = "hdfs://hadoop-namenode:9000/bank_project/gold/"
 try:
